@@ -18,6 +18,8 @@
 *.tar.gz
 *.rar
 
+.mvn
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -30,7 +32,7 @@ hs_err_pid*
 /out-tsc
 
 # dependencies
-/node_modules
+src/main/angular/node_modules
 
 # IDEs and editors
 /.idea
