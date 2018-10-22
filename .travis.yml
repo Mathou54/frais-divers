@@ -29,7 +29,7 @@ before_install:
 before_script:
   - cd ../angular
   - npm run lint
-  - npm run test -- --single-run
+  - npm run test -- --watch=false
   - npm run e2e
   - cd ../../..
 
@@ -37,7 +37,7 @@ deploy:
   provider: heroku
   buildpack: java
   skip_cleanup: true
-  app: m-petstore
+  app: frais-divers-co
   api_key: $HEROKU_KEY
   on:
     branch: master
