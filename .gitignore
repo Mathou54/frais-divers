@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/target/
 
 # dependencies
 src/main/angular/node_modules
