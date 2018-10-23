@@ -24,7 +24,7 @@ before_install:
     - chmod +x mvnw
 
 before_script:
-    - cd ../angular
+    - cd src/main/angular
     - npm run lint
     - npm run test -- --watch=false
     - npm run e2e
