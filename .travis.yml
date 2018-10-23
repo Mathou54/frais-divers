@@ -3,38 +3,38 @@ dist: trusty
 
 language: java
 jdk:
-- oraclejdk8
+	- oraclejdk8
 node_js:
-- "lts/*"
+	- "lts/*"
 
 apt:
-  sources:
-  - google-chrome
-  packages:
-  - google-chrome-stable
+	sources:
+		- google-chrome
+	packages:
+		- google-chrome-stable
 
 before_install:
-- npm install -g npm
-- cd src/main/angular
-- npm ci
-- npm run build -- --aot --prod
-- mkdir ../java/src/main/webapp/
-- cp -r dist/* ../java/src/main/webapp/
-- cd ../../..
-- chmod +x mvnw
+	- npm install -g npm
+	- cd src/main/angular
+	- npm ci
+	- npm run build -- --aot --prod
+	- mkdir ../resources/static/
+	- cp -r dist/* ../resources/static/
+	- cd ../../..
+	- chmod +x mvnw
 
 before_script:
-- cd ../angular
-- npm run lint
-- npm run test -- --watch=false
-- npm run e2e
-- cd ../../..
+	- cd ../angular
+	- npm run lint
+	- npm run test -- --watch=false
+	- npm run e2e
+	- cd ../../..
 
 deploy:
-  provider: heroku
-  buildpack: java
-  skip_cleanup: true
-  app: frais-divers-co
-  api_key: $HEROKU_KEY
-  on:
-  branch: master
+	provider: heroku
+	buildpack: java
+	skip_cleanup: true
+	app: frais-divers-co
+	api_key: $HEROKU_KEY
+	on:
+		branch: master
