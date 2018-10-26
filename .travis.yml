@@ -7,11 +7,8 @@ jdk:
 node_js:
     - "lts/*"
 
-apt:
-    sources:
-        - google-chrome
-    packages:
-        - google-chrome-stable
+addons:
+    chrome: stable
 
 before_install:
     - npm install -g npm
