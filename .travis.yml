@@ -26,7 +26,7 @@ before_install:
 before_script:
     - cd src/main/angular
     - npm run lint
-    - npm run test -- --watch=false
+    - npm run test
     - npm run e2e
     - cd ../../..
 
