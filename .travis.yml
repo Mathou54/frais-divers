@@ -4,7 +4,7 @@ language: java
 jdk:
     - openjdk8
 node_js:
-    - "lts/*"
+    - node
 
 addons:
     chrome: stable
