@@ -10,6 +10,7 @@ addons:
     chrome: stable
 
 before_install:
+    - nvm install 11.0.0
     - npm install -g npm
     - cd src/main/angular
     - npm ci
