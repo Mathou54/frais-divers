@@ -35,4 +35,3 @@ deploy:
     api_key: $HEROKU_KEY
     on:
         branch: master
-        type: push
