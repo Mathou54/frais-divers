@@ -10,23 +10,24 @@
 			"prefix": "app",
 			"schematics": {
 				"@schematics/angular:component": {
-					"styleext": "scss"
+				  "style": "scss"
 				}
 			},
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/frais-divers",
-						"index": "src/index.html",
-						"main": "src/main.ts",
-						"polyfills": "src/polyfills.ts",
-						"tsConfig": "src/tsconfig.app.json",
-						"assets": [
-							"src/favicon.ico",
-							"src/assets"
-						],
-						"styles": [
+					  "aot": true,
+					  "outputPath": "dist/frais-divers",
+					  "index": "src/index.html",
+					  "main": "src/main.ts",
+					  "polyfills": "src/polyfills.ts",
+					  "tsConfig": "src/tsconfig.app.json",
+					  "assets": [
+						"src/favicon.ico",
+						"src/assets"
+					  ],
+					  "styles": [
 							"src/styles.scss"
 						],
 						"scripts": []
@@ -49,11 +50,15 @@
 							"vendorChunk": false,
 							"buildOptimizer": true,
 							"budgets": [
-								{
-									"type": "initial",
-									"maximumWarning": "2mb",
-									"maximumError": "5mb"
-								}
+							  {
+								"type": "initial",
+								"maximumWarning": "2mb",
+								"maximumError": "5mb"
+							  },
+							  {
+								"type": "anyComponentStyle",
+								"maximumWarning": "6kb"
+							  }
 							]
 						}
 					}
